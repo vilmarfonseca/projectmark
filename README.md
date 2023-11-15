@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ProjectMark code challenge
 
-## Getting Started
+## Description
+This is part of ProjectMark's code challenge. The app consists of an onboard page, allowing users to choose one of the offered sales pipeline types. The pipelines are incremental, starting from the basic, which has the least options and goes to the expert and custom with all the supported pipelines. 
 
-First, run the development server:
+Currently, expert and custom are the same. This is an intentional choice. Since no further explanation was provided, the user should be able to choose the pipelines in the additional onboarding steps, not targeted by this challenge.
+
+## Built with
+
+<div>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="64" width="64"/>
+    <img    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" height="64" width="64"/>
+    <img    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="64" width="64"/>
+    <img    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="64" width="64"/>
+    <img    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="64" width="64"/>
+</div>
+
+## Live Version
+
+This project is deployed using vercel at [projectmark.vercel.app](https://projectmark.vercel.app).
+
+## Installation and Setup
+
+Start by installing the dependencies:
+
+```bash
+npm install
+# or
+yarn
+# or
+bun install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
 # or
-pnpm dev
-# or
 bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
