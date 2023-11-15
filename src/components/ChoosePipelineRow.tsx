@@ -1,33 +1,23 @@
 "use client";
 import PipelineTypeButton from "@/components/buttons/PipelineTypeButton";
-import { useState } from "react";
-
-const pipelineTypes = [
-  { type: "basic", order: 1, id: "basicType" },
-  { type: "advanced", order: 2, id: "advancedType" },
-  { type: "expert", order: 3, id: "expertType" },
-  { type: "custom", order: 4, id: "customType" },
-];
+import { GlobalContext } from "@/context/globalContext";
+import { useContext, useState } from "react";
 
 const ChoosePipelineRow = () => {
-  const [pipelineType, setPipelineType] = useState<string | undefined>(
-    pipelineTypes[0].type
-  );
+  const { globalState, dispatch } = useContext(GlobalContext);
 
   return (
     <div className="mt-6 flex flex-wrap md:flex-nowrap gap-4 w-full justify-center">
-      {pipelineTypes
+      {globalState.pipelineTypes
         .sort((a, b) => a.order - b.order)
         .map((option) => (
           <PipelineTypeButton
             key={option.id}
             id={option.id}
-            checked={pipelineType === option.type}
+            checked={globalState.pipelineType === option.type}
             name={option.type}
             onClick={() =>
-              setPipelineType(
-                pipelineTypes.find((item) => option.type === item.type)?.type
-              )
+              dispatch({ type: "SET_PIPELINE_TYPE", payload: option.type })
             }
           />
         ))}
