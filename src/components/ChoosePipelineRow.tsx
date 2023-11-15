@@ -2,7 +2,7 @@
 import PipelineTypeButton from "@/components/buttons/PipelineTypeButton";
 import { useState } from "react";
 
-const pipelineOptions = [
+const pipelineTypes = [
   { type: "basic", order: 1, id: "basicType" },
   { type: "advanced", order: 2, id: "advancedType" },
   { type: "expert", order: 3, id: "expertType" },
@@ -11,12 +11,12 @@ const pipelineOptions = [
 
 const ChoosePipelineRow = () => {
   const [pipelineType, setPipelineType] = useState<string | undefined>(
-    pipelineOptions[0].type
+    pipelineTypes[0].type
   );
 
   return (
-    <div className="mt-6 flex gap-4 w-full justify-center">
-      {pipelineOptions
+    <div className="mt-6 flex flex-wrap md:flex-nowrap gap-4 w-full justify-center">
+      {pipelineTypes
         .sort((a, b) => a.order - b.order)
         .map((option) => (
           <PipelineTypeButton
@@ -26,7 +26,7 @@ const ChoosePipelineRow = () => {
             name={option.type}
             onClick={() =>
               setPipelineType(
-                pipelineOptions.find((item) => option.type === item.type)?.type
+                pipelineTypes.find((item) => option.type === item.type)?.type
               )
             }
           />
