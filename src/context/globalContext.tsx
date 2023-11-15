@@ -1,11 +1,6 @@
 "use client";
 import React, { Dispatch, createContext, useReducer } from "react";
-import {
-  PipelineTypeActionType,
-  PipelinesActionType,
-  PipelinesReducer,
-  pipelineTypeReducer,
-} from "./reducers";
+import { PipelineTypeActionType, PipelineTypeReducer } from "./reducers";
 
 type InitialStateType = {
   pipelineType: TPipelineType;
@@ -83,24 +78,21 @@ const initialState: InitialStateType = {
 
 const mainReducer = (
   state: InitialStateType,
-  action: PipelinesActionType | PipelineTypeActionType
+  action: PipelineTypeActionType
 ): InitialStateType => {
   return {
-    pipelineType: pipelineTypeReducer(
+    pipelineType: PipelineTypeReducer(
       state.pipelineType,
       action as PipelineTypeActionType
     ),
     pipelineTypes: state.pipelineTypes,
-    pipelines: PipelinesReducer(
-      state.pipelines,
-      action as PipelinesActionType
-    ) as TPipelines,
+    pipelines: state.pipelines,
   };
 };
 
 export const GlobalContext = createContext<{
   globalState: InitialStateType;
-  dispatch: Dispatch<PipelinesActionType | PipelineTypeActionType>;
+  dispatch: Dispatch<PipelineTypeActionType>;
 }>({
   globalState: initialState,
   dispatch: () => null,
