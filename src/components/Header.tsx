@@ -4,7 +4,7 @@ import StepNavigationButton from "./buttons/StepNavigationButton";
 
 const Header: React.FC = () => {
   return (
-    <div className="flex w-full justify-between items-center p-6">
+    <div className="flex w-full justify-between items-center p-6 pb-0">
       <Logo />
       <div className="flex gap-8">
         <div className="flex flex-col justify-center items-center">
